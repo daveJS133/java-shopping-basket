@@ -21,4 +21,9 @@ public class ItemTest{
   public void hasProduct(){
     assertEquals(Product.MOUSE, item.getProduct());
   }
+
+  @Test
+  public void canGetPrice(){
+    assertEquals(10.00, item.getProduct().getPrice());
+  }
 }
