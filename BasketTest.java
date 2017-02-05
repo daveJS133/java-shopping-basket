@@ -40,5 +40,12 @@ public class BasketTest{
     assertEquals(0, basket.getSize());
   }
 
+  @Test
+  public void canFindGrossPrice(){
+    basket.addItem(item);
+    basket.addItem(item2);
+    assertEquals(25.00, basket.findGrossPrice(), 0.01);
+  }
+
 
 }
