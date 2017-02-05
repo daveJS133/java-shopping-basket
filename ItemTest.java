@@ -21,10 +21,4 @@ public class ItemTest{
   public void hasProduct(){
     assertEquals("Bread", item.getProduct());
   }
-
-
-
-
-
-
 }
