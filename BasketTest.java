@@ -9,8 +9,8 @@ public class BasketTest{
 
   @Before
   public void before(){
-    item = new Item("Bread");
-    item2 = new Item("Milk");
+    item = new Item(Product.MOUSE);
+    item2 = new Item(Product.KEYBOARD);
     basket = new Basket();
   }
 

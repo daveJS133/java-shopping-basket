@@ -4,15 +4,15 @@ import java.util.*;
 public class Item{
 
   private String id;
-  private String product;
+  private Product product;
 
-  public Item(String product){
+  public Item(Product product){
     this.id = UUID.randomUUID().toString();
     this.product = product;
     
   }
 
-  public String getProduct(){
+  public Product getProduct(){
     return product;
   }
 

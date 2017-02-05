@@ -8,7 +8,7 @@ public class ItemTest{
 
   @Before
   public void before(){
-    item = new Item("Bread");
+    item = new Item(Product.MOUSE);
   }
 
   @Test
@@ -19,6 +19,6 @@ public class ItemTest{
 
   @Test
   public void hasProduct(){
-    assertEquals("Bread", item.getProduct());
+    assertEquals(Product.MOUSE, item.getProduct());
   }
 }
