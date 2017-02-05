@@ -22,4 +22,12 @@ public class Basket{
     return this.getBasket().size();
   }
 
+  public void removeItem(String id){
+    basketHash.remove(id);
+  }  
+
+  public void removeAll(){
+    basketHash.clear();
+  }
+
 }
