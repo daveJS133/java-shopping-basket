@@ -3,15 +3,17 @@ import static org.junit.Assert.*;
 
 public class BasketTest{
 
+Customer customer;
+Basket basket;
   Item item;
   Item item2;
-  Basket basket;
 
   @Before
   public void before(){
+    customer = new Customer("Dave", false);
+    basket = new Basket(customer);
     item = new Item(Product.MOUSE);
     item2 = new Item(Product.KEYBOARD);
-    basket = new Basket();
   }
 
   @Test
@@ -21,31 +23,44 @@ public class BasketTest{
 
   @Test
   public void canAddItem(){
-    basket.addItem(item);
+    basket.addItem(item, customer);
     assertEquals(1, basket.getBasket().size());
   }
 
   @Test
   public void canRemoveItem(){
-    basket.addItem(item);
-    basket.removeItem(item.getId());
+    basket.addItem(item, customer);
+    basket.removeItem(item.getId(), customer);
     assertEquals(0, basket.getBasket().size());
   }
 
   @Test
   public void canRemoveAll(){
-    basket.addItem(item);
-    basket.addItem(item2);
+    basket.addItem(item, customer);
+    basket.addItem(item2, customer);
     basket.removeAll();
     assertEquals(0, basket.getSize());
   }
 
+  // @Test
+  // public void canFindGrossPrice(){
+  //   basket.addItem(item, customer);
+  //   basket.addItem(item2, customer);
+  //   assertEquals(25.00, basket.findGrossPrice(), 0.01);
+  // }
+
   @Test
-  public void canFindGrossPrice(){
-    basket.addItem(item);
-    basket.addItem(item2);
-    assertEquals(25.00, basket.findGrossPrice(), 0.01);
+  public void canBogof(){
+    basket.addItem(item2, customer);
+    assertEquals(2, basket.getSize());
+    assertEquals(15.00, basket.findNetPrice(customer), 0.01);
   }
 
+  @Test
+  public void testNoBogof(){
+    
+  }
+
+  
 
 }
