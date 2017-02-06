@@ -58,9 +58,11 @@ Basket basket;
 
   @Test
   public void testNoBogof(){
-    
+    basket.addItem(item, customer);
+    assertEquals(1, basket.getSize());
+    assertEquals(10.00, basket.findNetPrice(customer), 0.01);
   }
 
-  
+
 
 }
